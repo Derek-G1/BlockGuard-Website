@@ -2,7 +2,7 @@
 
 // Constants from your React app
 const APP_VERSION = "1.1.0";
-const PLAY_STORE_LINK = "https://play.google.com/store/apps/details?id=com.example.callblocker2"; // Assuming this remains the app's ID
+const PLAY_STORE_LINK = "https://play.google.com/store/apps/details?id=com.example.callblocker2";
 const MIN_ANDROID_VERSION = "Android 9 Pie (API 28)";
 
 // Page content data
@@ -187,11 +187,10 @@ const pages = {
                 <p class="text-gray-700 dark:text-gray-300 mb-4 max-w-xl mx-auto">
                     If you can't find the answer to your question in the FAQ, our support team is ready to assist you. Please don't hesitate to reach out.
                 </p>
-                <a href="mailto:support@blockguard.app" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
+                <button id="emailSupportBtn" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                     Email Support
-                </a>
-                
+                </button>
             </div>
         </div>
     `,
@@ -374,6 +373,11 @@ const termsFullText = `
     <p>If you have any questions about these Terms, please contact us at: <a href="mailto:terms@blockguard.app" class="text-blue-600 hover:underline dark:text-blue-400">terms@blockguard.app</a></p>
 `;
 
+// CAPTCHA variables
+let captchaExpectedAnswer = 0;
+let captchaNum1 = 0;
+let captchaNum2 = 0;
+
 
 // Function to render features
 function renderFeatures() {
@@ -436,7 +440,56 @@ function renderTerms() {
     }
 }
 
-// Navigation logic
+// CAPTCHA Modal Functions
+function openCaptchaModal() {
+    const captchaModal = document.getElementById('captchaModal');
+    const captchaQuestionEl = document.getElementById('captchaQuestion');
+    const captchaAnswerEl = document.getElementById('captchaAnswer');
+    const captchaErrorEl = document.getElementById('captchaError');
+
+    if (!captchaModal || !captchaQuestionEl || !captchaAnswerEl || !captchaErrorEl) return;
+
+    captchaNum1 = Math.floor(Math.random() * 10) + 1;
+    captchaNum2 = Math.floor(Math.random() * 10) + 1;
+    captchaExpectedAnswer = captchaNum1 + captchaNum2;
+
+    captchaQuestionEl.textContent = `What is ${captchaNum1} + ${captchaNum2}?`;
+    captchaAnswerEl.value = '';
+    captchaErrorEl.classList.add('hidden');
+    captchaErrorEl.textContent = '';
+    captchaModal.classList.remove('hidden');
+    captchaAnswerEl.focus();
+}
+
+function closeCaptchaModal() {
+    const captchaModal = document.getElementById('captchaModal');
+    if (captchaModal) {
+        captchaModal.classList.add('hidden');
+    }
+}
+
+function handleCaptchaSubmit() {
+    const captchaAnswerEl = document.getElementById('captchaAnswer');
+    const captchaErrorEl = document.getElementById('captchaError');
+    if (!captchaAnswerEl || !captchaErrorEl) return;
+
+    const userAnswer = parseInt(captchaAnswerEl.value, 10);
+
+    if (userAnswer === captchaExpectedAnswer) {
+        window.location.href = "mailto:support@blockguard.app";
+        closeCaptchaModal();
+    } else {
+        captchaErrorEl.textContent = "Incorrect answer. Please try again.";
+        captchaErrorEl.classList.remove('hidden');
+        // Optionally, regenerate question:
+        // openCaptchaModal(); 
+        captchaAnswerEl.value = '';
+        captchaAnswerEl.focus();
+    }
+}
+
+
+// Navigation logic and other initializations
 document.addEventListener('DOMContentLoaded', () => {
     const pageLinks = document.querySelectorAll('.page-link');
     const pageContents = document.querySelectorAll('.page-content');
@@ -450,9 +503,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const moonIcons = [document.getElementById('moonIconDesktop'), document.getElementById('moonIconMobile')];
     const sunIcons = [document.getElementById('sunIconDesktop'), document.getElementById('sunIconMobile')];
     const currentYearSpan = document.getElementById('currentYear');
-    const copyPrivacyButton = document.getElementById('copyPrivacyPolicy');
-    const copyTermsButton = document.getElementById('copyTermsButton');
     const toastElement = document.getElementById('toast');
+
+    // CAPTCHA Modal Elements
+    const captchaModal = document.getElementById('captchaModal');
+    const closeCaptchaModalButton = document.getElementById('closeCaptchaModal');
+    const submitCaptchaButton = document.getElementById('submitCaptcha');
+    const captchaAnswerInput = document.getElementById('captchaAnswer');
+
 
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
@@ -465,8 +523,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const activePage = document.getElementById(pageId);
         if (activePage) {
             activePage.classList.add('active');
-            // Scroll to top of page content
-            // Ensure header exists before trying to get its offsetHeight
             const header = document.querySelector('header');
             if (header) {
                  window.scrollTo({ top: header.offsetHeight, behavior: 'smooth' });
@@ -475,7 +531,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Update active nav link
         const allNavLinks = [...desktopNavLinks, ...mobileNavLinks];
         allNavLinks.forEach(link => {
             link.classList.remove('active');
@@ -489,26 +544,25 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
         const pageId = event.currentTarget.getAttribute('href').substring(1);
         
-        // Ensure the target section exists before trying to set its innerHTML
         const targetSection = document.getElementById(pageId);
         if (targetSection && pages[pageId]) {
             targetSection.innerHTML = pages[pageId];
-            // Re-run render functions if needed for dynamic content within pages
             if (pageId === 'features') renderFeatures();
-            if (pageId === 'support') renderFAQs();
+            if (pageId === 'support') {
+                renderFAQs();
+                // Re-attach event listener for the new email support button
+                const emailSupportBtn = document.getElementById('emailSupportBtn');
+                if (emailSupportBtn) {
+                    emailSupportBtn.addEventListener('click', openCaptchaModal);
+                }
+            }
             if (pageId === 'privacy') renderPrivacyPolicy();
             if (pageId === 'terms') renderTerms();
-        } else if (!targetSection && pages[pageId]) {
-            // If the section doesn't exist (e.g. first load of privacy/terms),
-            // it will be populated by the initial page load logic later.
-            // This can happen if a direct link to #privacy is used before home is loaded.
         }
-
-
+        
         showPage(pageId);
-        window.location.hash = pageId; // Update URL hash
+        window.location.hash = pageId;
 
-        // Close mobile menu on navigation
         if (mobileMenu && mobileMenu.classList.contains('mobile-menu-enter-active')) {
             mobileMenu.classList.remove('mobile-menu-enter-active');
             if(menuIcon) menuIcon.classList.remove('hidden');
@@ -521,9 +575,8 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', navigate);
     });
 
-    // Initial page load based on hash or default to home
     let initialPageId = window.location.hash.substring(1) || 'home';
-    if (!document.getElementById(initialPageId) || !pages[initialPageId]) { // Fallback if hash is invalid or section doesn't exist
+    if (!document.getElementById(initialPageId) || !pages[initialPageId]) {
         initialPageId = 'home';
     }
     
@@ -531,14 +584,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (initialTargetSection && pages[initialPageId]) {
          initialTargetSection.innerHTML = pages[initialPageId];
          if (initialPageId === 'features') renderFeatures();
-         if (initialPageId === 'support') renderFAQs();
+         if (initialPageId === 'support') {
+             renderFAQs();
+             const emailSupportBtn = document.getElementById('emailSupportBtn');
+             if (emailSupportBtn) {
+                 emailSupportBtn.addEventListener('click', openCaptchaModal);
+             }
+         }
          if (initialPageId === 'privacy') renderPrivacyPolicy();
          if (initialPageId === 'terms') renderTerms();
     }
     showPage(initialPageId);
 
-
-    // Mobile menu toggle
     if (mobileMenuButton && mobileMenu && menuIcon && closeIcon) {
         mobileMenuButton.addEventListener('click', () => {
             const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
@@ -549,7 +606,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Dark mode toggle
     function applyTheme(isDark) {
         if (isDark) {
             document.documentElement.classList.add('dark');
@@ -583,8 +639,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-
-    // Copy to clipboard function
     function copyToClipboard(text, buttonElement) {
         if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(text).then(() => {
@@ -601,7 +655,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function fallbackCopyToClipboard(text, buttonElement) {
         const textArea = document.createElement("textarea");
         textArea.value = text;
-        textArea.style.position = "fixed"; // Prevent scrolling to bottom
+        textArea.style.position = "fixed"; 
         textArea.style.top = "-9999px";
         textArea.style.left = "-9999px";
         document.body.appendChild(textArea);
@@ -612,7 +666,6 @@ document.addEventListener('DOMContentLoaded', () => {
             showToast(buttonElement);
         } catch (err) {
             console.error('Failed to copy with execCommand:', err);
-            // Avoid alert()
             const tempAlert = document.createElement('div');
             tempAlert.textContent = "Failed to copy. Please copy manually.";
             tempAlert.style.position = 'fixed';
@@ -651,12 +704,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // Attach event listeners for copy buttons after content is potentially rendered
-    // Need to use event delegation or re-attach if content is re-rendered.
-    // For simplicity, we'll re-attach in navigate function for privacy/terms.
-    // However, a better approach for dynamically added buttons is event delegation.
-    // For now, direct attachment after initial full page render.
-
     document.body.addEventListener('click', function(event) {
         if (event.target.closest('#copyPrivacyPolicy')) {
             const policyContainer = document.getElementById('privacyPolicyTextContainer');
@@ -667,6 +714,30 @@ document.addEventListener('DOMContentLoaded', () => {
             if (termsContainer) copyToClipboard(termsContainer.innerText, event.target.closest('#copyTermsButton'));
         }
     });
+
+    // CAPTCHA Modal Event Listeners
+    if (closeCaptchaModalButton) {
+        closeCaptchaModalButton.addEventListener('click', closeCaptchaModal);
+    }
+    if (submitCaptchaButton) {
+        submitCaptchaButton.addEventListener('click', handleCaptchaSubmit);
+    }
+    if (captchaAnswerInput) {
+        captchaAnswerInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                handleCaptchaSubmit();
+            }
+        });
+    }
+     // Close modal if clicked outside of it
+    if (captchaModal) {
+        captchaModal.addEventListener('click', function(event) {
+            if (event.target === captchaModal) {
+                closeCaptchaModal();
+            }
+        });
+    }
+
 
 });
 

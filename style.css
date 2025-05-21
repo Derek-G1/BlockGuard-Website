@@ -98,7 +98,7 @@ html {
 
 /* Details/Summary styling */
 details > summary {
-  list-style: none;
+  list-style: none; /* Removes default marker */
   cursor: pointer;
 }
 details > summary::-webkit-details-marker { /* Chrome/Safari */
@@ -106,4 +106,9 @@ details > summary::-webkit-details-marker { /* Chrome/Safari */
 }
 details > summary::marker { /* Firefox */
   display: none;
+}
+
+/* CAPTCHA Modal Styles */
+#captchaModal.hidden {
+    display: none;
 }
