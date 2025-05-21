@@ -1,0 +1,109 @@
+/* style.css */
+body {
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Active nav link style */
+.nav-link.active {
+    background-color: #2563eb; /* Tailwind blue-600 */
+    color: white;
+}
+.dark .nav-link.active {
+    background-color: #3b82f6; /* Tailwind blue-500 */
+}
+
+/* Smooth scroll for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Page transition simulation */
+.page-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+.page-content.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile menu animation */
+.mobile-menu-enter {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.mobile-menu-enter-active {
+    max-height: 500px; /* Adjust as needed */
+}
+
+/* Custom scrollbar for better aesthetics (optional) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.dark ::-webkit-scrollbar-track {
+    background: #2d3748; /* Tailwind gray-800 */
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+.dark ::-webkit-scrollbar-thumb {
+    background: #555;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+/* Prose styles for policy pages */
+.prose h2 { margin-top: 1.5em; margin-bottom: 0.5em; font-size: 1.5em; font-weight: 600; }
+.prose h3 { margin-top: 1.25em; margin-bottom: 0.25em; font-size: 1.25em; font-weight: 600; }
+.prose p, .prose ul, .prose ol { margin-bottom: 1em; line-height: 1.75; }
+.prose ul, .prose ol { padding-left: 1.5em; }
+.prose li { margin-bottom: 0.5em; }
+.prose strong { font-weight: 600; }
+.prose a { color: #2563eb; text-decoration: underline; }
+.dark .prose a { color: #60a5fa; }
+
+/* Toast notification for copy */
+.toast-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #10b981; /* Tailwind green-500 */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: translateY(20px);
+}
+.toast-notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Details/Summary styling */
+details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+details > summary::-webkit-details-marker { /* Chrome/Safari */
+  display: none;
+}
+details > summary::marker { /* Firefox */
+  display: none;
+}
