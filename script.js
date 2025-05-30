@@ -143,10 +143,6 @@ const pages = {
                     </div>
                 </div>
             </div>
-            <div class="mt-10 text-center">
-                <img src="https://placehold.co/700x350/E2E8F0/4A5568?text=Simplified+App+Workflow&font=inter" alt="Block Guard UI Flow" class="mx-auto rounded-lg shadow-lg" onerror="this.onerror=null; this.src='https://placehold.co/700x350/CCCCCC/999999?text=Flowchart+Error&font=inter';">
-                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Visual representation of Block Guard's simple and effective workflow.</p>
-            </div>
         </div>
     `,
     download: `
