@@ -279,62 +279,78 @@ const faqData = [
 
 const privacyPolicyFullText = `
     <p><strong>Last Updated:</strong> ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-    <p>RadStorm Technologies LLC ("we," "us," or "our") operates the Block Guard mobile application (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.</p>
-    <p>We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy.</p>
-    <h2>Information Collection and Use</h2>
-    <p>Block Guard is designed to operate primarily on your device. We collect the following types of information for the sole purpose of providing and improving the Service features:</p>
-    <h3>User-Provided Data:</h3>
+    <p>Ownership of Apps; Agreement to Terms of Privacy Policy</p>
+    <p>This Privacy Policy (the “Privacy Policy”) applies to all associated applications owned or operated by RadStorm Technologies LLC, and their subsidiaries and affiliates (collectively, the “Company”) including, but not limited to, the Company’s webapp(s) and downloadable applications (collectively, the “Apps”). The Apps are the property of the Company and its licensors.</p>
+    <p>YOU ACKNOWLEDGE AND AGREE THAT BY DOWNLOADING, Browse, OR OTHERWISE USING THE CONTENT, SERVICES AND TOOLS OFFERED BY THE APPS, YOU HAVE AGREED, WITHOUT LIMITATION OR QUALIFICATION, TO BE BOUND BY THIS PRIVACY POLICY AND ANY ADDITIONAL TERMS THAT MAY APPLY. If you do not agree with this Agreement, please do not download or use the Apps.</p>
+    <p>The Company reserves the right, at its sole discretion, to change, modify, add or remove portions of this Privacy Policy, at any time, consistent with applicable law. You agree to be bound by this Agreement and any amendments made thereto in the future so long as you utilize the Apps. It is your responsibility to check this Agreement periodically for changes. The Company will post a notification on the Apps or otherwise provide notice to you if the Privacy Policy materially changes. Such changes, whether in the form of modifications, additions, or deletions, shall become effective when specified in the relevant notification. If you do not agree to the changes, uninstall and do not continue to use the Apps after the date they become effective. Your continued use of the Apps following the posting of changes will mean that you accept and agree to the changes. As long as you comply with this Privacy Policy, the Company grants you a personal, non-exclusive, non-transferable, limited privilege to download, browse, and use the Apps.</p>
+    <h2>Contents of this Privacy Policy</h2>
+    <p>This Privacy Policy describes Company policies and procedures on the collection, use and disclosure of your information when you use the Apps and tells you about your privacy rights and how the law protects you.</p>
+    <p>We use your personal data to provide and improve the Apps. By using the Apps, you agree to the collection and use of information in accordance with this Privacy Policy.</p>
+    <h2>Definitions</h2>
+    <p>For purposes of this Privacy Policy:</p>
     <ul>
-        <li>Phone numbers you explicitly add to your blocklist or whitelist.</li>
-        <li>Area codes you explicitly add to your blocklist or whitelist.</li>
-        <li>Keywords you explicitly add for SMS/text message blocking.</li>
+        <li>Account means a unique account created by you to access the Apps or Company Services</li>
+        <li>Affiliate means an entity that controls, is controlled by, or is under common control with a party, where “control” means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority</li>
+        <li>Application means the software program(s) described above, provided by the Company and downloaded by you on any electronic device</li>
+        <li>Device means any device that can access the Apps, such as a computer, cellphone, or digital tablet</li>
+        <li>Personal Data is any information that relates to an identified or identifiable individual</li>
+        <li>Service refers to the Application/App and provision thereof</li>
+        <li>Service Provider means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, and to perform services related to the Service or to assist the Company in analyzing how the Service is used</li>
+        <li>Third-Party Social Media Service refers to any website or any social network platform through which a User can log in or create an account to use the Service</li>
+        <li>Usage Data refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself</li>
+        <li>User means the individual accessing or using the Service or the Application(s), or the legal entity on behalf of which such individual is accessing or using the Service or the Application(s), as applicable</li>
     </ul>
-    <h3>Data Processed for Functionality (Primarily On-Device):</h3>
+    <h2>Personal Data</h2>
+    <p>While using the Apps, we may ask you to provide us with certain personally identifiable information that can be used to identify you. This information is not collected or stored by the Company. All user data and PII is stored locally on the user’s device in perpetuity. Personally identifiable information may include, but is not limited to:</p>
     <ul>
-        <li><strong>Call Log Data:</strong> If you grant READ_CALL_LOG and WRITE_CALL_LOG permissions, the app accesses your call log to identify incoming numbers for blocking, to log blocked calls within the app, and to allow you to add numbers from your call history to block/whitelists. This data is processed on your device.</li>
-        <li><strong>Contact List Data:</strong> If you grant READ_CONTACTS permission, the app accesses your contacts to enable whitelisting, identify callers by name, and allow contacts during Do Not Disturb mode. Your contact list is NOT uploaded or shared from your device by Block Guard.</li>
-        <li><strong>SMS Content (for Text Blocking):</strong> If you enable text message blocking and grant necessary SMS permissions (READ_SMS, RECEIVE_SMS), the app will process incoming SMS content on your device to match against your defined blocked senders or keywords. Blocked SMS messages may be logged within the app for your review. The content of non-blocked SMS messages is not stored by Block Guard beyond what your default SMS app stores.</li>
-        <li><strong>Notification Access (BIND_NOTIFICATION_LISTENER_SERVICE):</strong> If text message blocking is active and the app is not the default SMS app, this permission may be used to read incoming message notifications on-device to identify and block messages based on sender or content.</li>
+        <li>Email address</li>
+        <li>First and last name</li>
+        <li>Phone number</li>
+        <li>Address, state, province, zip/postal code, city</li>
     </ul>
-    <h2>How Information is Used</h2>
-    <p>The information Block Guard processes is used solely to:</p>
+    <h2>Third-Party Social Media Services</h2>
+    <p>The Company allows you to create and log in to use the Apps/Services through Third-Party Social Media Services, including but not necessarily limited to: Google, Facebook and/or Twitter.</p>
+    <p>If you decide to register through or otherwise grant us access to a Third-Party Social Media Service, we may use Personal Data that is already associated with your Third-Party Social Media Service’s account, such as your name, or your email address associated with that account, for the limited purpose of identifying you and your user account.</p>
+    <h2>Information Collected During Use of the Application</h2>
+    <p>While using the Apps, in order to provide features of the Apps, we may access Personal Data, with your permission, in order to provide App functionality and features. Subject to the following provisions, none of this information is stored off-device or accessed by the Company in any other way. We use this information only to provide features of the Services and to improve and customize the Apps and Services.</p>
+    <p>You can enable or disable access to this information at any time through your Device settings.</p>
+    <h2>Use of Your Personal Data</h2>
+    <p>The Company may use Personal Data for the following purposes:</p>
     <ul>
-        <li>Provide the core features of the app: call blocking, text message blocking, whitelisting, area code filtering, and Do Not Disturb functionality.</li>
-        <li>Display call logs and blocked message logs within the app for your reference.</li>
-        <li>Improve the functionality and user experience of the app.</li>
+        <li>To provide and maintain the Apps/Services, including to monitor usage of the Apps/Services</li>
+        <li>To manage your account and your registration as a user of the Apps/Services. The Personal Data you provide can give you access to different functionalities of the Apps that are available to you as a registered user.</li>
+        <li>For the performance of a contract: the execution, compliance and undertaking of the purchase contracts for products, items or services you may purchase through the Apps or any other Service that are available to you as a registered user.</li>
+        <li>To provide you with news and offers as well as general information about other goods, services and events which we offer that are similar to those that you have already purchased or inquired about, unless you have opted not to receive such information</li>
+        <li>To manage your requests to us as part of our customer support</li>
+        <li>For business transfers: we may use your Personal Data to evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which Personal Data held by us about the Apps/Service users is among the assets transferred</li>
+        <li>For analytics: we may use your Personal Data for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns, and to evaluate and improve the Apps, Services, products, marketing and your experience</li>
     </ul>
-    <h2>Data Storage and Security</h2>
+    <h2>Disclosure of Your Personal Data</h2>
+    <h3>Business Transactions.</h3><p>If the Company is involved in a merger, acquisition or asset sale, your Personal Data may be transferred or disclosed. We will provide notice before your Personal Data is transferred and becomes subject to a different Privacy Policy.</p>
+    <h3>Law Enforcement.</h3><p>Under certain circumstances, the Company may be required to disclose your Personal Data if required to do so by law or in response to valid requests by public authorities such as a court order or government agency.</p>
+    <h3>Other Legal Requirements.</h3><p>The Company may disclose your Personal Data in the good faith belief that such action is necessary to:</p>
     <ul>
-        <li>All your settings (blocklists, whitelists, keywords, app preferences) are stored <strong>locally on your device</strong>.</li>
-        <li>We utilize Android's <strong>EncryptedSharedPreferences</strong> (via \`androidx.security:security-crypto\`) for enhanced data protection of these settings on your device.</li>
-        <li>The Backup and Restore feature allows you to create a user-password-encrypted backup file of your settings. This file is stored where you choose (e.g., your device storage, cloud drive). The security of this backup file outside of the app is your responsibility.</li>
+        <li>Comply with a legal obligation</li>
+        <li>Protect and defend the rights or property of the Company or its Affiliates</li>
+        <li>Prevent or investigate possible wrongdoing in connection with the Apps/Services</li>
+        <li>Protect the personal safety of Users of the Apps/Services or the general public</li>
+        <li>Protect against legal liability</li>
     </ul>
-    <h2>Data Sharing</h2>
-    <p><strong>RadStorm Technologies LLC does not share your personal data, call logs, contact lists, or message content with any third parties.</strong> All processing for blocking and filtering happens on your device.</p>
-    <h2>Permissions</h2>
-    <p>Block Guard requests the following key permissions to function. We only ask for permissions necessary for the app's features:</p>
-    <ul>
-        <li><code>READ_PHONE_STATE</code>, <code>ANSWER_PHONE_CALLS</code>, <code>MANAGE_OWN_CALLS</code>: To detect, identify, and manage incoming calls for blocking.</li>
-        <li><code>CALL_PHONE</code>: To enable direct calling from logs or the app interface (if such a feature is used).</li>
-        <li><code>READ_CONTACTS</code>: To identify callers from your contacts, for whitelisting, and to allow contacts during DND.</li>
-        <li><code>READ_CALL_LOG</code> / <code>WRITE_CALL_LOG</code>: To display call history and log blocked calls within the app.</li>
-        <li><code>READ_SMS</code> / <code>RECEIVE_SMS</code> / <code>SEND_SMS</code>: For text message blocking and if set as default SMS app.</li>
-        <li><code>BIND_SCREENING_SERVICE</code>: For advanced call screening capabilities on supported Android versions.</li>
-        <li><code>ACCESS_NOTIFICATION_POLICY</code>: For Do Not Disturb functionality.</li>
-        <li><code>POST_NOTIFICATIONS</code> (Android 13+): To show status notifications (e.g., when DND is active).</li>
-    </ul>
-    <h2>User Rights</h2>
-    <p>You have control over your data within the app. You can:</p>
-    <ul>
-        <li>View and modify your blocklists, whitelists, and keyword lists.</li>
-        <li>Clear your blocked call log and blocked SMS log within the app.</li>
-        <li>Manage app permissions through your device settings.</li>
-        <li>Use the Backup & Restore feature to manage your settings data.</li>
-    </ul>
-    <h2>Policy Updates</h2>
-    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes.</p>
+    <h2>Security of Your Personal Data</h2>
+    <p>The security of your Personal Data is important to us; however, no method of transmission over the internet, or method of electronic storage is ever 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p>
+    <h2>Children’s Privacy</h2>
+    <p>The Apps/Services do not address anyone under the age of 18. We do not knowingly collect personally identifiable information from anyone under the age of 18 without verification of parental consent. If you are a parent or guardian of a child younger than 18 and you are aware that your child has provided us with Personal Data, please contact us immediately. If we become aware that we have collected Personal Data from anyone under the age of 18 without verification of parental consent, we take steps to remove that information from our servers.</p>
+    <p>If your jurisdiction requires consent from a parent for provision of Personal Data or other information, we will require a parent or legal guardian’s consent before collecting and using information of a minor.</p>
+    <h2>Links to Other Websites</h2>
+    <p>The Apps/Services may contain links to other websites that are not operated by the Company or its Affiliates. If you click on a third-party link, you will be directed to that third party’s site. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third party sites or services. We strongly advise you to review the Privacy Policy of every site that you visit.</p>
+    <h2>Changes to this Privacy Policy</h2>
+    <p>We reserve the right to update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy in this space or by other push notifications, emails, or prominent notice.</p>
     <h2>Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:privacy@blockguard.app" class="text-blue-600 hover:underline dark:text-blue-400">privacy@blockguard.app</a></p>
+    <p>If you have any questions about this Privacy Policy, you can contact us:</p>
+    <ul>
+        <li>By email: <a href="mailto:support@radstormtech.com" class="text-blue-600 hover:underline dark:text-blue-400">support@radstormtech.com</a></li>
+        <li>By visiting our support website: <a href="https://radstormtech.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline dark:text-blue-400">radstormtech.com</a></li>
+    </ul>
 `;
 
 const termsFullText = `
@@ -476,7 +492,7 @@ function handleCaptchaSubmit() {
     const userAnswer = parseInt(captchaAnswerEl.value, 10);
 
     if (userAnswer === captchaExpectedAnswer) {
-        window.location.href = "mailto:support@blockguard.app";
+        window.location.href = "mailto:support@blockguard.app"; // Make sure this email is correct, or use a dynamic one if needed
         closeCaptchaModal();
     } else {
         captchaErrorEl.textContent = "Incorrect answer. Please try again.";
