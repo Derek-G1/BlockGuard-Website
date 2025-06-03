@@ -22,7 +22,7 @@ const pages = {
                     <a href="#download" class="page-link bg-white text-blue-600 dark:bg-gray-100 dark:text-blue-700 font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-gray-200 dark:hover:bg-gray-300 transition duration-300 text-lg relative z-10">
                         Download Block Guard
                     </a>
-                   <img src="images/Home_Screen.jpg" alt="Block Guard App Mockup" class="mt-12 mx-auto block w-full rounded-lg shadow-2xl max-w-md md:max-w-lg lg:max-w-xl relative z-10" onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/999999?text=Image+Error&font=inter';">
+                   <img src="images/Home_Screen.jpg" alt="Screenshot of Home Screen" class="mt-12 mx-auto block w-full rounded-lg shadow-2xl max-w-md md:max-w-lg lg:max-w-xl relative z-10" onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/999999?text=Image+Error&font=inter';">
                 </div>
             </section>
             <section class="py-12">
