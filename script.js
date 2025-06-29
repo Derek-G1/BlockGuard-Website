@@ -2,7 +2,7 @@
 
 // Constants from your React app
 const APP_VERSION = "1.1.0";
-const PLAY_STORE_LINK = "https://play.google.com/store/apps/details?id=com.example.callblocker2";
+const PLAY_STORE_LINK = "https://play.google.com/store/apps/details?id=com.radstormtech.blockguard";
 const MIN_ANDROID_VERSION = "Android 9 Pie (API 28)";
 
 // Page content data
