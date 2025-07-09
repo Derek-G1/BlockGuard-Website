@@ -74,14 +74,16 @@ function handleCaptchaSubmit() {
     }
 }
 
-// Declare pageContents, desktopNavLinks, mobileNavLinks globally
+// Declare global variables for DOM elements
 let pageContents;
 let desktopNavLinks;
 let mobileNavLinks;
-let mobileMenu; // Define globally for access in navigate
-let menuIcon;   // Define globally for access in navigate
-let closeIcon;  // Define globally for access in navigate
-let mobileMenuButton; // Define globally for access in navigate
+let mobileMenu;
+let menuIcon;
+let closeIcon;
+let mobileMenuButton;
+let toastElement; // Also declare toastElement globally
+let currentYearSpan; // Also declare currentYearSpan globally
 
 // Function to show page content and apply active states
 function showPage(pageId) {
@@ -145,6 +147,7 @@ function navigate(event) {
 
     if (mobileMenu && mobileMenu.classList.contains('mobile-menu-enter-active')) {
         mobileMenu.classList.remove('mobile-menu-enter-active');
+        // Ensure menu icon is shown and close icon is hidden when menu closes
         if(menuIcon) menuIcon.classList.remove('hidden');
         if(closeIcon) closeIcon.classList.add('hidden');
         if(mobileMenuButton) mobileMenuButton.setAttribute('aria-expanded', 'false');
@@ -173,9 +176,8 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileMenu = document.getElementById('mobile-menu');
     menuIcon = document.getElementById('menuIcon');
     closeIcon = document.getElementById('closeIcon');
-
-    const currentYearSpan = document.getElementById('currentYear');
-    const toastElement = document.getElementById('toast');
+    currentYearSpan = document.getElementById('currentYear');
+    toastElement = document.getElementById('toast');
 
     // CAPTCHA Modal Elements
     const captchaModal = document.getElementById('captchaModal');
@@ -183,10 +185,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitCaptchaButton = document.getElementById('submitCaptcha');
     const captchaAnswerInput = document.getElementById('captchaAnswer');
 
-
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
+
+    // Initialize mobile menu icon visibility
+    // Initially, the menu icon should be visible, and the close icon hidden.
+    // This overrides any 'hidden' class set in HTML to ensure consistent JS control.
+    if (menuIcon) menuIcon.classList.remove('hidden');
+    if (closeIcon) closeIcon.classList.add('hidden');
 
     // Initial attachment of listeners
     attachPageLinkListeners();
@@ -214,13 +221,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     showPage(initialPageId); // Call showPage to apply active states and re-attach listeners
 
-    if (mobileMenuButton && mobileMenu && menuIcon && closeIcon) {
+    if (mobileMenuButton) { // Check if button exists before adding listener
         mobileMenuButton.addEventListener('click', () => {
             const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
             mobileMenuButton.setAttribute('aria-expanded', String(!isExpanded));
             mobileMenu.classList.toggle('mobile-menu-enter-active');
-            menuIcon.classList.toggle('hidden');
-            closeIcon.classList.toggle('hidden');
+            
+            // Toggle visibility of menu and close icons
+            if(menuIcon) menuIcon.classList.toggle('hidden');
+            if(closeIcon) closeIcon.classList.toggle('hidden');
         });
     }
 
@@ -230,6 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             document.documentElement.classList.remove('dark');
         }
+        // These can be declared here as they are only used within this function
         const moonIcons = [document.getElementById('moonIconDesktop'), document.getElementById('moonIconMobile')];
         const sunIcons = [document.getElementById('sunIconDesktop'), document.getElementById('sunIconMobile')];
         moonIcons.forEach(icon => { if(icon) icon.classList.toggle('hidden', isDark) });
