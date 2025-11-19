@@ -1,0 +1,50 @@
+# -------------------
+# Operating System Files
+# -------------------
+# Windows
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Mac (in case a collaborator uses a Mac)
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# -------------------
+# Editors & IDEs
+# -------------------
+# VS Code directory
+.vscode/
+
+# JetBrains/IntelliJ/WebStorm
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# -------------------
+# Logs & Debugging
+# -------------------
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# -------------------
+# Dependencies & Builds
+# -------------------
+# Even if you don't use these yet, it is safer to ignore them now
+node_modules/
+dist/
+build/
+
+# -------------------
+# Security
+# -------------------
+# Never commit environment variable files with keys
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
