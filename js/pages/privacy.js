@@ -1,6 +1,7 @@
 // js/pages/privacy.js
 
 export const privacyPolicyFullText = `
+<div class="prose max-w-4xl mx-auto p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
 <p><b>PRIVACY POLICY</b></p>
 <p><b>Last updated June 09, 2025</b></p>
 <p>This Privacy Notice for RadStorm Technologies ("we," "us," or "our"),
@@ -689,6 +690,7 @@ right to withdraw your consent to our processing of your personal
 information. These rights may be limited in some circumstances by
 applicable law. To request to review, update, or delete your personal
 information please visit <a href="https://blockguard.app/#support" target="_blank" rel="noopener noreferrer">https://blockguard.app/#support</a></p>
+</div>
 `;
 
 export function renderPrivacyPolicy() {
