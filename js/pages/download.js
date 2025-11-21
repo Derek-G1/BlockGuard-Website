@@ -1,7 +1,9 @@
 // js/pages/download.js
 
-// Import constants from the centralized constants.js file
-import { APP_VERSION, PLAY_STORE_LINK, MIN_ANDROID_VERSION } from '../constants.js';
+// Constants
+const APP_VERSION = "1.1.0";
+const PLAY_STORE_LINK = "https://play.google.com/store/apps/details?id=com.radstormtech.blockguard";
+const MIN_ANDROID_VERSION = "Android 9 Pie (API 28)";
 
 export const downloadContent = `
     <div class="space-y-10 text-center">
