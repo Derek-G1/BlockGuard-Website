@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles from style.css can be moved here or kept in style.css if not conflicting */
+/* Moving critical styles here for better bundling */
+
+body {
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Active nav link style */
+.nav-link.active {
+    @apply bg-blue-600 text-white;
+}
+.dark .nav-link.active {
+    @apply bg-blue-500;
+}
+
+/* Smooth scroll for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Page transition simulation */
+.page-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+.page-content.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile menu animation */
+.mobile-menu-enter {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.mobile-menu-enter-active {
+    max-height: 500px; /* Adjust as needed */
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.dark ::-webkit-scrollbar-track {
+    background: #2d3748;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+.dark ::-webkit-scrollbar-thumb {
+    background: #555;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+/* Prose styles */
+.prose h2 { @apply mt-6 mb-2 text-2xl font-semibold; }
+.prose h3 { @apply mt-5 mb-1 text-xl font-semibold; }
+.prose p, .prose ul, .prose ol { @apply mb-4 leading-relaxed; }
+.prose ul, .prose ol { @apply pl-6; }
+.prose li { @apply mb-2; }
+.prose strong { @apply font-semibold; }
+.prose a { @apply text-blue-600 underline; }
+.dark .prose a { @apply text-blue-400; }
+
+/* Toast notification */
+.toast-notification {
+    @apply fixed bottom-5 right-5 bg-green-500 text-white px-5 py-2.5 rounded-lg shadow-lg z-50 opacity-0 transition-all duration-300 transform translate-y-5;
+}
+.toast-notification.show {
+    @apply opacity-100 translate-y-0;
+}
+
+/* Details/Summary styling */
+details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details > summary::marker {
+  display: none;
+}
+
+/* CAPTCHA Modal Styles */
+#captchaModal.hidden {
+    display: none;
+}
