@@ -35,7 +35,10 @@ describes how and why we might access, collect, store, use, and/or share
         history. The app is built using modern Android development
         practices, including Kotlin, Jetpack Compose for the UI, Material
         Design 3 components, MVVM architecture, Room Database for local
-        storage, and kotlinx.serialization for JSON processing.</li>
+        storage, and kotlinx.serialization for JSON processing.
+
+        <p><b>Spam Database Updates:</b> To provide the most up-to-date protection, the Application periodically connects to our content delivery servers (hosted on GitHub) to download an updated list of reported spam numbers. This list is aggregated from public government resources (such as the U.S. Federal Trade Commission) and community reports. This process involves a one-way retrieval of data; no user data, call logs, contacts, or personal information are uploaded, shared, or transmitted from your device to the FTC or any third party during this update.</p>
+        </li>
     <li>Engage with us in other related ways, including any sales,
         marketing, or events</li>
 </ul>
