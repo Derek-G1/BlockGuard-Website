@@ -41,16 +41,16 @@ export const featuresData = [
 
   // --- Management & Scheduling ---
   { 
+    iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 text-indigo-600 dark:text-indigo-400"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>', 
+    title: "Blocking Profiles", 
+    description: "Create and switch between custom blocking configurations (e.g., Work, Home).", 
+    details: "Define multiple blocking profiles with distinct rules and switch between them instantly to adapt your protection level to your current environment." 
+  },
+  { 
     iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 text-green-600 dark:text-green-400"><path d="M17.7 17.7A10.014 10.014 0 0 1 6.3 6.3M21 21l-1.65-1.65M9 11.65A1.65 1.65 0 0 0 7.35 10h0A1.65 1.65 0 0 0 9 8.35V3M9 3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1M1 1l22 22"></path></svg>', 
     title: "Do Not Disturb Mode", 
     description: "Configure comprehensive quiet periods with customizable exceptions (Allow Contacts/Favorites).", 
     details: "Enjoy focused work or restful nights. DND mode silences all but your most important calls, with flexible scheduling and exception rules." 
-  },
-  { 
-    iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 text-blue-600 dark:text-blue-400"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>', 
-    title: "Default Dialer", 
-    description: "A complete replacement for your system dialer with InCallService support.", 
-    details: "Block Guard serves as your primary phone app, offering a seamless calling experience integrated directly with your block lists and spam protection." 
   },
   { 
     iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 text-green-600 dark:text-green-400"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>', 
@@ -59,12 +59,30 @@ export const featuresData = [
     details: "Set it and forget it. Create schedules like 'Work Hours' (Mon-Fri 9-5) or 'Weekend Relax'. Includes a master toggle to quickly disable all schedules." 
   },
 
-  // --- SMS, Logs, & Data ---
+  // --- App Features & Data ---
+  { 
+    iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 text-blue-600 dark:text-blue-400"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>', 
+    title: "Default Dialer", 
+    description: "A complete replacement for your system dialer with InCallService support.", 
+    details: "Block Guard serves as your primary phone app, offering a seamless calling experience integrated directly with your block lists and spam protection." 
+  },
+  { 
+    iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 text-orange-600 dark:text-orange-400"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>', 
+    title: "Insightful Dashboard", 
+    description: "View daily and total blocked call statistics and recent activity at a glance.", 
+    details: "Stay informed with visual counters for calls blocked today and in total, plus quick access to your most recently blocked numbers directly on the home screen." 
+  },
   { 
     iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 text-blue-600 dark:text-blue-400"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>', 
     title: "SMS & MMS Management", 
     description: "Full support for sending/receiving texts and picture messages as your Default SMS App.", 
     details: "Block Guard isn't just for calls. Filter unwanted text messages by keyword or sender, view blocked messages in a quarantined log, and restore them if needed." 
+  },
+  { 
+    iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 text-gray-600 dark:text-gray-400"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>', 
+    title: "Unified Call History", 
+    description: "Access your full call logs alongside your blocked call history in one place.", 
+    details: "View a complete timeline of all your incoming, outgoing, and missed calls, integrated seamlessly with your blocked call records." 
   },
   { 
     iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 text-green-600 dark:text-green-400"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>', 
@@ -83,6 +101,12 @@ export const featuresData = [
     title: "Global & Themed", 
     description: "Supports 50+ languages, Light/Dark themes, and international number formats.", 
     details: "Designed for a global audience. Block Guard automatically adapts to your system theme (Light/Dark) and speaks over 50 languages." 
+  },
+  { 
+    iconSvg: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 text-yellow-600 dark:text-yellow-400"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>', 
+    title: "Battery Efficient", 
+    description: "Optimized to run in the background without draining your battery.", 
+    details: "Block Guard is designed to run efficiently 24/7, providing continuous protection with minimal impact on your device's battery life." 
   }
 ];
 
