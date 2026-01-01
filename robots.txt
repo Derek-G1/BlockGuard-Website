@@ -1,13 +1,3 @@
 User-agent: *
 Allow: /
-
-# Prevent bots from trying to browse directory listings
-Disallow: /js/
-Disallow: /Images/
-
-# Explicitly allow the resources inside those folders so the page renders correctly
-Allow: /js/*.js
-Allow: /Images/*.jpg
-Allow: /Images/*.png
-Allow: /Images/*.svg
-Allow: /style.css
+Sitemap: https://www.blockguard.app/sitemap.xml
