@@ -1,13 +1,11 @@
 // script.js
 
-// Import page content and render functions
-// script.js
-
 // Page configuration for dynamic imports
 const pageConfig = {
     home: { module: () => import('./js/pages/home.js'), contentVar: 'homeContent' },
     features: { module: () => import('./js/pages/features.js'), contentVar: 'featuresContent', renderFunc: 'renderFeatures' },
     'how-it-works': { module: () => import('./js/pages/howItWorks.js'), contentVar: 'howItWorksContent' },
+    faq: { module: () => import('./js/pages/faq.js'), contentVar: 'faqContent' },
     download: { module: () => import('./js/pages/download.js'), contentVar: 'downloadContent' },
     support: { module: () => import('./js/pages/support.js'), contentVar: 'supportContent', renderFunc: 'renderFAQs' },
     about: { module: () => import('./js/pages/about.js'), contentVar: 'aboutContent' },

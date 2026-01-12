@@ -5,9 +5,22 @@
 /* Custom styles from style.css can be moved here or kept in style.css if not conflicting */
 /* Moving critical styles here for better bundling */
 
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
 body {
+    min-height: 100vh; /* Forces body to be at least the height of the screen */
+    display: flex;     /* Enables flexbox layout */
+    flex-direction: column; /* Stacks children (header, main, footer) vertically */
     font-family: 'Inter', sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+main {
+    flex: 1; /* Forces main content to grow and push footer down */
+    width: 100%; /* Ensures main content takes full width */
 }
 
 /* Active nav link style */
@@ -17,11 +30,6 @@ body {
 
 .dark .nav-link.active {
     @apply bg-blue-500;
-}
-
-/* Smooth scroll for anchor links */
-html {
-    scroll-behavior: smooth;
 }
 
 /* Page transition simulation */

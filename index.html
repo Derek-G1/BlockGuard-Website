@@ -17,7 +17,8 @@
     
     <title>Block Guard - Best Spam, Scam & Call Blocker for Android</title>
     <meta name="description" content="Stop unwanted calls with Block Guard. The ultimate spam call blocker and scam blocker for Android. Features neighbor spoofing protection, SMS filtering, and precise call blocking.">
-    <meta name="keywords" content="call blocker, spam blocker, spam call blocker, scam call blocker, scam blocker, block spam calls, android call blocker, neighbor spoofing protection, sms blocker, stop robocalls, block guard, blockguard, call blocking app, robocall blocker, unwanted call blocker, phone call blocker, spam call filter, scam call filter, call filter app, sms filter app, block unwanted texts">
+    <meta name="keywords" content="call blocker, spam blocker, spam call blocker, scam call blocker, scam blocker, block spam calls, android call blocker, neighbor spoofing protection, sms blocker, stop robocalls, 
+                block guard, blockguard, call blocking app, robocall blocker, unwanted call blocker, phone call blocker, spam call filter, scam call filter, call filter app, sms filter app, block unwanted texts">
     <meta name="author" content="RadStorm Technologies LLC">
     <meta name="copyright" content="RadStorm Technologies LLC">
     <meta name="robots" content="index, follow">
@@ -45,7 +46,7 @@
       "applicationCategory": "UtilitiesApplication",
       "offers": {
         "@type": "Offer",
-        "price": "0",
+        "price": "4.99",
         "priceCurrency": "USD"
       },
       "description": "Block Guard is a powerful call and SMS blocker app for Android that helps you eliminate spam, scams, and unwanted calls.",
@@ -57,6 +58,70 @@
     }
     </script>
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How do I add a number to the blocklist?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Navigate to the 'Blocked Numbers' section from the main menu or homepage quick actions. Enter the number you wish to block and tap 'Add Number'. You can also select from your contacts."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How does whitelisting work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Whitelisted numbers will always bypass any blocking rules, including Do Not Disturb mode (if overrides are enabled). Add important contacts to your whitelist from the 'Whitelist' section to ensure you never miss their calls."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What permissions does Block Guard need and why?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Block Guard requires permissions like READ_PHONE_STATE (to detect incoming calls), CALL_PHONE (to manage calls), READ_CONTACTS (for whitelisting and caller ID), READ_CALL_LOG (to display call history), and SMS permissions (for text blocking). Each permission is crucial for the app's core functionality."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How does Do Not Disturb mode function?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DND mode blocks all incoming calls unless they are from whitelisted numbers or contacts (if configured in DND settings). You can schedule DND for specific times or toggle it manually."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Is my data secure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, your data is secure. Block Guard uses Android's EncryptedSharedPreferences to store your settings locally on your device. We do not upload your blocklists, whitelists, or call logs to any server."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How do I backup and restore my settings?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Block Guard includes a Backup & Restore feature. You can find this in the main menu. Export your settings (including blocklists, whitelists, and app preferences) to an encrypted file. You can restore from this file if you reinstall the app."
+        }
+      }, {
+        "@type": "Question",
+        "name": "What if I see a 'Preference Error Dialog'?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This dialog can appear if there's an issue accessing your encrypted settings. If 'Import Backup' fails, navigate to Block Guard's app info, select 'Storage & cache', then 'Clear storage'. Relaunch the app and restore your backup."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Text message blocking isn't working perfectly.",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For the most effective text message blocking, Block Guard should be set as your default SMS application. This allows it to intercept and filter all incoming SMS messages directly."
+        }
+      }]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -65,7 +130,7 @@
     <link rel="icon" type="image/webp" href="/Images/app_icon.webp">
 </head>
 
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased min-h-screen flex flex-col"></body>
 
     <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-[100]">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,15 +151,15 @@
                     <a href="#features"
                         class="nav-link page-link px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150 text-gray-700 hover:bg-blue-100 hover:text-blue-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">Features</a>
                     <a href="#how-it-works"
-                        class="nav-link page-link px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150 text-gray-700 hover:bg-blue-100 hover:text-blue-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">How
-                        It Works</a>
+                        class="nav-link page-link px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150 text-gray-700 hover:bg-blue-100 hover:text-blue-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">How It Works</a>
+                    <a href="#faq"
+                        class="nav-link page-link px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150 text-gray-700 hover:bg-blue-100 hover:text-blue-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">FAQ</a>
                     <a href="#download"
                         class="nav-link page-link px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150 text-gray-700 hover:bg-blue-100 hover:text-blue-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">Download</a>
                     <a href="#support"
                         class="nav-link page-link px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150 text-gray-700 hover:bg-blue-100 hover:text-blue-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">Support</a>
                     <a href="#about"
-                        class="nav-link page-link px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150 text-gray-700 hover:bg-blue-100 hover:text-blue-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">About
-                        Us</a>
+                        class="nav-link page-link px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150 text-gray-700 hover:bg-blue-100 hover:text-blue-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">About Us</a>
                 </nav>
 
                 <div class="hidden md:block">
@@ -174,24 +239,25 @@
                     <a href="#features"
                         class="nav-link page-link block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-100 hover:text-blue-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">Features</a>
                     <a href="#how-it-works"
-                        class="nav-link page-link block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-100 hover:text-blue-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">How
-                        It Works</a>
+                        class="nav-link page-link block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-100 hover:text-blue-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">How It Works</a>
+                     <a href="#faq"
+                        class="nav-link page-link block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-100 hover:text-blue-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">FAQ</a>
                     <a href="#download"
                         class="nav-link page-link block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-100 hover:text-blue-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">Download</a>
                     <a href="#support"
                         class="nav-link page-link block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-100 hover:text-blue-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">Support</a>
                     <a href="#about"
-                        class="nav-link page-link block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-100 hover:text-blue-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">About
-                        Us</a>
+                        class="nav-link page-link block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-100 hover:text-blue-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">About Us</a>
                 </nav>
             </div>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
         <section id="home" class="page-content active"></section>
         <section id="features" class="page-content"></section>
         <section id="how-it-works" class="page-content"></section>
+        <section id="faq" class="page-content"></section>
         <section id="download" class="page-content"></section>
         <section id="support" class="page-content"></section>
         <section id="about" class="page-content"></section>

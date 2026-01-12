@@ -14,7 +14,7 @@ export const faqData = [
 export const supportContent = `
     <div class="space-y-10">
         <div class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-3">Support & FAQ</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-3">Support</h1>
             <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Find answers to common questions and get help with Block Guard.</p>
         </div>
         <div class="max-w-3xl mx-auto space-y-6" id="faqContainer">
