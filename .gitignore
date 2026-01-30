@@ -53,3 +53,14 @@ build/
 # Server Configuration
 # -------------------
 .htaccess
+# Added by ggshield
+.cache_ggshield
+
+# Added by ggshield
+.cache_ggshield
+
+# Added by ggshield
+.cache_ggshield
+
+# Added by ggshield
+.cache_ggshield
